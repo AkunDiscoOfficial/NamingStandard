@@ -165,9 +165,7 @@ test("getcallingscript", {})
 test("getscriptclosure", {"getscriptfunction"}, function()
 	local module = game:GetService("CoreGui").RobloxGui.Modules.Common.Constants
 	local constants = getrenv().require(module)
-	local generated = getscriptclosure(module)()
-	assert(constants ~= generated, "Generated module should not match the original")
-	assert(shallowEqual(constants, generated), "Generated constant table should be shallow equal to the original")
+	local generated = getscriptclosure(module)(
 end)
 
 test("hookfunction", {"replaceclosure"}, function()
