@@ -165,7 +165,7 @@ test("getcallingscript", {})
 test("getscriptclosure", {"getscriptfunction"}, function()
 	local module = game:GetService("CoreGui").RobloxGui.Modules.Common.Constants
 	local constants = getrenv().require(module)
-	local generated = getscriptclosure(module)(
+	local generated = getscriptclosure(module)()
 end)
 
 test("hookfunction", {"replaceclosure"}, function()
